@@ -19,7 +19,7 @@ The pipeline goes from 23 GB of raw ship-position reports to a calibrated SimPy 
 
 ## The data
 
-The data is AIS (Automatic Identification System) data published by the [Danish Maritime Authority](https://admin.dma.dk/safety-at-sea/navigational-information/download-data). Ships broadcast their position, speed and status every few seconds. One day covers about 3.3 GB and 18 million reports.
+The data is AIS (Automatic Identification System) data published by the Danish Maritime Authority. Ships broadcast their position, speed and status every few seconds. One day covers about 3.3 GB and 18 million reports.
 
 | | |
 |---|---|
@@ -160,7 +160,7 @@ Each replication draws **one parameter set from the posterior**, so the 500 runs
 pip install -r requirements.txt
 ```
 
-1. Download daily AIS files from the [DMA](https://admin.dma.dk/safety-at-sea/navigational-information/download-data) and put the unzipped `aisdk-YYYY-MM-DD.csv` files in `data/`. Keep them outside cloud-synced folders if you can, since each is about 3 GB.
+1. Download daily AIS files from the [DMA](https://www.dma.dk/safety-at-sea/navigational-information/ais-data) and put the unzipped `aisdk-YYYY-MM-DD.csv` files in `data/`. Keep them outside cloud-synced folders if you can, since each is about 3 GB.
 2. Run the pipeline:
 
 ```bash
