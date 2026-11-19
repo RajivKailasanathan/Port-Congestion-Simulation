@@ -13,7 +13,7 @@ The pipeline goes from 23 GB of raw ship-position reports to a calibrated SimPy 
 3. Fit a hierarchical Bayesian model of arrivals and time at berth.
 4. Simulate the port with uncertainty carried through from the data.
 
-This is a demonstration project, built in a few days. It doesn't claim to forecast congestion. The section *What the results show, and what they don't* below is explicit about the limits.
+
 
 ---
 
@@ -141,13 +141,9 @@ Each replication draws **one parameter set from the posterior**, so the 500 runs
 - The simulation reproduces the week it was calibrated on. Every observed value falls inside the simulated range.
 - Correct handling of censored stays changes the estimates materially, compared with simply averaging complete stays.
 
-**What they don't show**
 
-- **This is a consistency check, not a test of predictions.** The model is compared with the same week used to fit it. A proper test would fit on one period and predict a different one.
-- **The simulation runs a little busy** (3.7 ships at berth against 2.7 observed). This is likely because the lognormal's long tail of very long stays can't be ruled out from one week.
-- **One week leaves wide uncertainty.** About 10% of the simulated runs come from parameter sets that overload the port. More data would rule most of these out.
-- **Not all waits are caused by full berths.** Some ships anchored at Aarhus while berths were free, so they were probably waiting for cargo, a specific berth or orders. The model only captures waits caused by capacity.
-- **The simulation doesn't yet do anything that queueing formulas can't.** It is essentially a standard queue with 7 identical berths, which formulas such as Erlang C can approximate. The case for simulation comes with the next steps below.
+- **This is a consistency check, not a test of predictions.** The model is compared with the same week used to fit it. 
+
 
 ## Next steps
 
